@@ -1,12 +1,9 @@
-
-import './App.css';
+import Body from "./components/Body";
 
 function App() {
-  return (
-    <div className="App">
-      <div class="text-3xl font-bold text-green-800"> namaste!</div>
-    </div>
-  );
+
+  return  <Body />
+  
 }
 
 export default App;
