@@ -2,6 +2,9 @@
 
 - create react app
 - configured tailwindcss
+- header
+- loginform
+- sign up form. form library recommended formik
 
 
 # Features
