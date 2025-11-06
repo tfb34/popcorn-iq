@@ -3,8 +3,11 @@
 - create react app
 - configured tailwindcss
 - header
+- routing. data mode
 - loginform
 - sign up form. form library recommended formik
+- form validation
+- useref hook
 
 
 # Features
