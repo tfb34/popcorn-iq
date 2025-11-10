@@ -1,6 +1,9 @@
 import { useState, useRef } from "react";
 import Header from "./Header";
 import { checkValidData } from "../utils/validate";
+import popcorniqBackground from "../assets/popcorniq-background-image.png"
+import {createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
+import {auth} from "../utils/firebase";
 
 const Login = ()=>{
 
@@ -17,7 +20,33 @@ const Login = ()=>{
        const message = checkValidData(emailRef.current.value, passwordRef.current.value)
        setErrorMessage(message)
      
-       //sign /sign up
+        if(message) return;
+
+        if(!isSignInForm){
+            createUserWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value)
+            .then((userCredential) => {
+                // Signed up 
+                const user = userCredential.user;
+                console.log("new user created")
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                setErrorMessage(errorCode +" - "+errorMessage)
+            });
+        }else{
+            signInWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                console.log("returned user: "+ user)
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                setErrorMessage(errorCode +"- "+ errorMessage)
+            });
+        }
 
     }
 
@@ -25,7 +54,7 @@ const Login = ()=>{
         <div>
             <Header />
             <div className="absolute">
-                 <img className="h-100" src="https://assets.nflxext.com/ffe/siteui/vlv3/9ba9f0e2-b246-47f4-bd1f-3e84c23a5db8/web/US-en-20251020-TRIFECTA-perspective_8a45da41-350f-44b7-b1fa-716f96050491_small.jpg" alt="catalog" />
+                 <img className="h-100" src={popcorniqBackground} alt="catalog" />
             </div>
             
             <form onSubmit={(e)=>{e.preventDefault()}} className="p-12 bg-black absolute w-3/12 my-36 mx-auto right-0 left-0 text-white bg-opacity-80">

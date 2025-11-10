@@ -8,6 +8,9 @@
 - sign up form. form library recommended formik
 - form validation
 - useref hook
+- firebase setup
+- deploying app to production
+- create signup user account
 
 
 # Features
