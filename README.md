@@ -20,6 +20,7 @@
 - bugfix: sign up user dislayname and profile picture update
 - bugfix: if user is not logged in redirect /browse to /login and vice versa.
 - unsubscribed to the onAuthStateChanged call back
+- add hardcoded values to the constant file
 
 # Features
 - Login/Sign Up
