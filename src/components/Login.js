@@ -52,7 +52,6 @@ const Login = ()=>{
                 }).catch((error) => {
                 setErrorMessage(error.message)
                 });
-                console.log("new user created")
                 
             })
             .catch((error) => {
@@ -64,8 +63,7 @@ const Login = ()=>{
             signInWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value)
             .then((userCredential) => {
                 // Signed in 
-                const user = userCredential.user;
-                console.log("returned user: "+ user)
+                // const user = userCredential.user;
                 
             })
             .catch((error) => {

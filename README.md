@@ -21,6 +21,16 @@
 - bugfix: if user is not logged in redirect /browse to /login and vice versa.
 - unsubscribed to the onAuthStateChanged call back
 - add hardcoded values to the constant file
+- register tmdb api to get access token
+- get data from tmdb now playing movies list api 
+- custom hook for now playing movies
+- create movieslice
+- update store with movies data
+- planning for maincontainer and secondary container
+- fetch data for trailer video
+- update store with trailer video data
+- embedded the youtube video and make it autplay and mute
+- use tailewind classes to make main container look good.
 
 # Features
 - Login/Sign Up
