@@ -31,6 +31,7 @@
 - update store with trailer video data
 - embedded the youtube video and make it autplay and mute
 - use tailewind classes to make main container look good.
+- build secondary container
 
 # Features
 - Login/Sign Up
